@@ -1,4 +1,4 @@
-package main
+package goSample
 
 import "fmt"
 
