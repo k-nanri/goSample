@@ -28,4 +28,18 @@ func main() {
 	aa1[2] = "Blue"
 	fmt.Println(aa1[0], aa1[1], aa1[2])
 
+
+	// スライス == Javaでいうリスト？
+	aa2 := []string{}
+	aa2 = append(aa2, "Red")
+	aa2 = append(aa2, "Blue")
+	fmt.Println(aa2[0], aa2[1])
+	
+	// capは容量。メモリ上に確保されている数。
+	aa3 := []int{}
+	for i := 0; i< 10; i++ {
+		aa3 = append(aa3, i)
+		fmt.Println(len(aa3), cap(aa3))
+	}
+
 }
