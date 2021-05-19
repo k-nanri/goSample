@@ -3,6 +3,10 @@
 Goの入門
 [https://www.tohoho-web.com/ex/golang.html#install]
 
+ここまで実施  
+swith文  
+[https://www.tohoho-web.com/ex/golang.html#switch]
+
 ## プロジェクトの作成
 
 プロジェクトの作成のために、```go mod init```が必要。
@@ -24,6 +28,12 @@ go build -o 実行ファイル名 ソースファイル名
 ```go
 aa3 := []int{}
 ```
+
+## switch文
+
+break文はなくfallthroughがある。  
+fallthroughがあると次のcase文が実行される。  
+意図があって処理を継続するので、明示的に定義されるために、fallthroughがあると理解。  
 
 ##  不明点
 

@@ -65,7 +65,36 @@ func main() {
 		fmt.Println(key ," = ", value)
 	}
 
+	var x int = 3
+	var y int = 4
 
+	if x < y {
+		fmt.Println("True")
+	}
+
+	var mode string = "stop"
+
+	switch mode {
+	case "running":
+		fmt.Println("実行中")
+	case "stop":
+		fmt.Println("停止中")
+	default:
+		fmt.Println("不明")
+	}
+
+	// go では switch文にbreakなし. 処理を継続する場合はfallthroughを指定
+
+	var dayOfWeek string = "sat"
+	switch dayOfWeek {
+	case "sat":
+		fmt.Println("in case")
+		fallthrough
+	case "sun":
+		fmt.Println("Horiday")
+	default:
+		fmt.Println("Weekday")
+	}
 
 
 
