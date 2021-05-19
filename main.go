@@ -42,4 +42,32 @@ func main() {
 		fmt.Println(len(aa3), cap(aa3))
 	}
 
+	// メモリの事前確保
+	//bufa := make([]byte, 0 , 1024)
+
+	// map
+	map1 := map[string]int{
+		"x": 100,
+		"y": 200,
+	}
+
+	fmt.Println(map1["x"])
+
+	// map add value
+	map1["z"] = 300
+	fmt.Println(map1["z"])
+
+	delete(map1, "z")
+
+	// mapをループ処理する
+	fmt.Println("### Map Loop ####")
+	for key,value := range map1 {
+		fmt.Println(key ," = ", value)
+	}
+
+
+
+
+
+
 }
