@@ -40,3 +40,4 @@ fallthroughがあると次のcase文が実行される。
 - main.go  の ```package main``` を別名にすると実行ファイルが作成されない
 - mapの要素が存在するかどうかの調べ方が不明。
 - mapの全キーを取得する処理が不明
+- rangeって何。

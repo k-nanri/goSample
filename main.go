@@ -96,7 +96,30 @@ func main() {
 		fmt.Println("Weekday")
 	}
 
+	// for
+	for i:= 0; i < 10; i++ {
+		fmt.Println(i)
+	}
 
+	// cotinue, break
+	n := 0
+	for {
+		n++
+		if n > 10 {
+			fmt.Println("Break!!")
+			break
+		} else if n % 2 == 1 {
+			fmt.Println("Continue = ", n)
+			continue
+		} else {
+			fmt.Println(n)
+		}
+	}
 
+	// rangeを使ってloop
+	colors := [...]string{"Red", "Green", "Blue"}
+	for i, color := range colors {
+		fmt.Println(i, ": ", color)
+	}
 
 }
