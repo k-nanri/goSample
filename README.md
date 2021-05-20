@@ -4,8 +4,8 @@ Goの入門
 [https://www.tohoho-web.com/ex/golang.html#install]
 
 ここまで実施  
-swith文  
-[https://www.tohoho-web.com/ex/golang.html#switch]
+for文  
+[https://www.tohoho-web.com/ex/golang.html#for]
 
 ## プロジェクトの作成
 
