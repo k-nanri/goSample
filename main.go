@@ -122,4 +122,44 @@ func main() {
 		fmt.Println(i, ": ", color)
 	}
 
+	// goto
+	fmt.Println("goto1")
+	goto Done
+	fmt.Println("goto2")
+	Done:
+	fmt.Println("Done")
+
+	// function
+	var z int = add(3, 5)
+	// z := add(3, 5)
+	fmt.Println("add function return values is ", z)
+
+	// function retuns multiple values
+	var x4, y4 int = addMinus(10, 20)
+	fmt.Println("x4 = ", x4)
+	fmt.Println("y4 = ", y4)
+
+	// 不要な戻り値がある場合は、ブランク変数 _ を使用することができる
+	_, y4 = addMinus(10, 30)
+	fmt.Println("y4 = ", y4)
+
+	// ...を用いると可変引数を実現可能
+	fmt.Println("Call funcA !!!!")
+	funcA(1, 2, 3, 4, 5, 6, 7)
+
+}
+
+func funcA(a int, b ... int) {
+	fmt.Println("a = ", a)
+	for i, num := range b {
+		fmt.Println("b[",i,"] = ", num)
+	}
+}
+
+func addMinus(x int, y int) (int, int) {
+	return x + y, x - y
+}
+
+func add(x int, y int) int {
+	return x + y
 }
