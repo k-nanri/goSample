@@ -1,4 +1,11 @@
-# Memo
+# GoLang Study Memo
+
+## 目標
+
+- GoLangの基本構文を覚える
+- 基本的なコーディングができるようになる(for文とかif文をサイトを見ないで書けるようになる)
+- GoLangでRESTAPIのプログラムを作成できるようになる
+- GoLangからDBの操作する方法を学ぶ
 
 Goの入門
 [https://www.tohoho-web.com/ex/golang.html#install]
@@ -7,12 +14,13 @@ Goの入門
 for文  
 [https://www.tohoho-web.com/ex/golang.html#structures]
 
-## プロジェクトの作成
+## メモ
+### プロジェクトの作成
 
 プロジェクトの作成のために、```go mod init```が必要。
 よく分からない。。。
 
-## ビルド
+### ビルド
 
 ```go
 go build ソースファイル名
@@ -29,7 +37,7 @@ go build -o 実行ファイル名 ソースファイル名
 aa3 := []int{}
 ```
 
-## 変数
+### 変数
 
 初期値を指定する場合、:= を用いるとvarも省略できる
 (初期値により型名が明白名場合は型名も省略可能)
@@ -43,13 +51,13 @@ a3 := 123
 
 ```
 
-## switch文
+### switch文
 
 break文はなくfallthroughがある。  
 fallthroughがあると次のcase文が実行される。  
 意図があって処理を継続するので、明示的に定義されるために、fallthroughがあると理解。  
 
-## 構造体(struct)
+### 構造体(struct)
 
 GoLangdでは、クラスの代わりに構造体を使用。
 クラスメソッドに相当する関数は関数名の前に(thisに相当する変数 *構造体名)をつけて定義する。
