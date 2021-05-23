@@ -147,13 +147,24 @@ func main() {
 	fmt.Println("Call funcA !!!!")
 	funcA(1, 2, 3, 4, 5, 6, 7)
 
+	// struct
+	var p1 Person
+	p1.SetPerson("Yamada", 26)
+	name, age := p1.GetPerson()
+	fmt.Println("Person name = ", name, ", age = ", age)
+
+	var p2 Person2
+	p2.SetPerson2("Tanaka")
+	p2.Age = 30
+	fmt.Println("Person2 Age = ", p2.Age)
+
 }
 
 func funcA(a int, b ... int) {
 	fmt.Println("a = ", a)
 	for i, num := range b {
 		fmt.Println("b[",i,"] = ", num)
-	}
+	}	
 }
 
 func addMinus(x int, y int) (int, int) {
@@ -163,3 +174,27 @@ func addMinus(x int, y int) (int, int) {
 func add(x int, y int) int {
 	return x + y
 }
+
+type Person struct {
+	name string
+	age int
+}
+
+type Person2 struct {
+	name string
+	Age int
+}
+
+func (p *Person2) SetPerson2(name string) {
+	p.name = name
+}
+
+func (p *Person) SetPerson(name string, age int) {
+	p.name = name
+	p.age = age
+}
+
+func (p *Person) GetPerson() (string, int) {
+	return p.name ,p.age
+}
+
