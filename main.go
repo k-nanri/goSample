@@ -158,6 +158,12 @@ func main() {
 	p2.Age = 30
 	fmt.Println("Person2 Age = ", p2.Age)
 
+	fmt.Println("=== interface check =================")
+	person3 := Person{name: "takaki"}
+	book3 := Book{title: "hogehoge"}
+	PrintOut(person3)
+	PrintOut(book3)
+
 }
 
 func funcA(a int, b ... int) {
@@ -197,4 +203,31 @@ func (p *Person) SetPerson(name string, age int) {
 func (p *Person) GetPerson() (string, int) {
 	return p.name ,p.age
 }
+
+type Printable interface {
+	ToString() string
+}
+
+func PrintOut(p Printable) {
+	fmt.Println(p.ToString())
+}
+
+func (p Person) ToString() string {
+	return p.name
+}
+
+type Book struct {
+	title string
+}
+
+func (b Book) SetBook(title string) {
+	b.title = title
+}
+
+func (b Book) ToString() string {
+	return b.title
+}
+
+
+
 
