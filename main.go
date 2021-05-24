@@ -164,7 +164,12 @@ func main() {
 	PrintOut(person3)
 	PrintOut(book3)
 
+	fmt.Println("=== interface{} ==================")
+	funcB(book3)
+
 }
+
+
 
 func funcA(a int, b ... int) {
 	fmt.Println("a = ", a)
@@ -228,6 +233,13 @@ func (b Book) ToString() string {
 	return b.title
 }
 
-
+func funcB(a interface{}) {
+	q, ok := a.(Printable)
+	if ok {
+		fmt.Println(q.ToString())
+	} else {
+		fmt.Println("Not Printable.")
+	}
+}
 
 

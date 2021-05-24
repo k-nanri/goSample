@@ -14,7 +14,7 @@
 [https://qiita.com/tenntenn/items/0e33a4959250d1a55045]
 
 ここまで実施  
-interface文  
+interface{}
 [https://www.tohoho-web.com/ex/golang.html#interfaces]
 
 ## メモ
