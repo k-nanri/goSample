@@ -4,6 +4,7 @@
 
 - GoLangの基本構文を覚える
 - 基本的なコーディングができるようになる(for文とかif文をサイトを見ないで書けるようになる)
+- GoLangの単体テストのやり方
 - GoLangでRESTAPIのプログラムを作成できるようになる
 - GoLangからDBの操作する方法を学ぶ
 
@@ -14,8 +15,8 @@
 [https://qiita.com/tenntenn/items/0e33a4959250d1a55045]
 
 ここまで実施  
-interface{}
-[https://www.tohoho-web.com/ex/golang.html#interfaces]
+pointer
+[https://www.tohoho-web.com/ex/golang.html#pointer]
 
 ## メモ
 ### プロジェクトの作成

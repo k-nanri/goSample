@@ -167,6 +167,34 @@ func main() {
 	fmt.Println("=== interface{} ==================")
 	funcB(book3)
 
+	// pointer
+	fmt.Println("=== Pointer ===================")
+	var pointer1 int
+	var pointer2 *int
+
+	pointer2 = &pointer1
+	*pointer2 = 123
+	fmt.Println(pointer1)
+	var b1 int = 123
+	var b2 int = 123
+	pointercheck(b1, &b2)
+	fmt.Println("b1 = ", b1, ", b2 = ", b2)
+
+	var pi3 Person
+	pi3.SetPerson("takahashi", 27)
+	p3 := &pi3
+	fmt.Println("pi3.name = ", pi3.name)
+	fmt.Println("(*p3).name = ", (*p3).name)
+	fmt.Println("p3.name = ", p3.name)
+
+
+
+
+}
+
+func pointercheck(b1 int, b2 *int) {
+	b1 = 456
+	*b2 = 789
 }
 
 
