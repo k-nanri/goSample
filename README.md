@@ -15,8 +15,8 @@
 [https://qiita.com/tenntenn/items/0e33a4959250d1a55045]
 
 ここまで実施  
-pointer
-[https://www.tohoho-web.com/ex/golang.html#pointer]
+領域確保
+[https://www.tohoho-web.com/ex/golang.html#new]
 
 ## メモ
 ### プロジェクトの作成

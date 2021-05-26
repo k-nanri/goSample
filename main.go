@@ -187,10 +187,24 @@ func main() {
 	fmt.Println("(*p3).name = ", (*p3).name)
 	fmt.Println("p3.name = ", p3.name)
 
+	// new
 
+	bookList := []*Book{}
+
+	for i:= 0; i < 10; i++ {
+		book := new(Book)
+		book.title = fmt.Sprintf("Title#%d", i)
+		bookList = append(bookList, book)
+	}
+
+	for _, book := range bookList {
+		fmt.Println(book.title)
+	}
 
 
 }
+
+
 
 func pointercheck(b1 int, b2 *int) {
 	b1 = 456
