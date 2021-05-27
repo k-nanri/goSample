@@ -1,6 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"time"
+	"fmt"
+)
+//import "local/mypkg"
+
+
 
 func main() {
 	fmt.Println("Hello, World")
@@ -201,7 +207,23 @@ func main() {
 		fmt.Println(book.title)
 	}
 
+	go funcGoroutine()
+	for i := 0; i < 20; i++ {
+		fmt.Println("M")
+		time.Sleep(200 * time.Millisecond)
+	}
 
+
+
+}
+
+func funcGoroutine() {
+	fmt.Println("funcGoroutine start")
+	for i := 0; i < 10; i++ {
+
+		fmt.Println("A")
+		time.Sleep(100 * time.Millisecond)
+	}
 }
 
 
