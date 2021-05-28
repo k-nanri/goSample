@@ -8,7 +8,7 @@
 - GoLangでRESTAPIのプログラムを作成できるようになる
 - GoLangからDBの操作する方法を学ぶ
 
-とほほのGo言語入門
+とほほのGo言語入門　[完了]
 [https://www.tohoho-web.com/ex/golang.html#install]
 
 次に参考にする
