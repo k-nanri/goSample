@@ -207,22 +207,80 @@ func main() {
 		fmt.Println(book.title)
 	}
 
+	// Goroutine
 	go funcGoroutine()
 	for i := 0; i < 20; i++ {
 		fmt.Println("M")
-		time.Sleep(200 * time.Millisecond)
+		time.Sleep(20 * time.Millisecond)
 	}
 
+	// チャネルを用いたゴルーチンの終了待ち合わせ
+	// chanはチャネルを生成する
 
+	// チャネルの生成
+	chA := make(chan string)
+	// 使用後クローズ
+	defer close(chA)
+	go funcChannel(chA)
+	// チャネルからのメッセージを受信
+	fmt.Println("Wait....!!")
+	msg := <- chA
+	fmt.Println(msg)
 
+	// selectを用いた待ち合わせ
+	chAA := make(chan string)
+	chBB := make(chan string)
+
+	defer close(chAA)
+	defer close(chBB)
+
+	finflagA := false
+	finflagB := false
+
+	go funcChannel(chAA)
+	go funcChannelB(chBB)
+
+	for {
+		fmt.Print(".")
+		select {
+		case msg := <- chAA:
+			fmt.Println("")
+			fmt.Println("chAA found msg")
+			finflagA = true
+			fmt.Println(msg)
+		case msg := <- chBB:
+			fmt.Println("")
+			fmt.Println("chBB found msg")
+			finflagB = true
+			fmt.Println(msg)
+		}
+		if finflagA && finflagB {
+			break
+		}
+	}
 }
+
+func funcChannelB(chA chan <- string) {
+	fmt.Println("funcChannelB Start!!")
+	time.Sleep(10 * time.Second)
+	fmt.Println("funcChannelB Sleep End!!")
+	chA <- "funcChannelB Finished"
+}
+
+func funcChannel(chA chan <- string) {
+	fmt.Println("funcChannel Start!!")
+	time.Sleep(20 * time.Second)
+	fmt.Println("funcChaneel Sleep End!!!!")
+	chA <- "funcChannel Finished"
+}
+
 
 func funcGoroutine() {
 	fmt.Println("funcGoroutine start")
 	for i := 0; i < 10; i++ {
 
 		fmt.Println("A")
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(10 * time.Millisecond)
 	}
 }
 
