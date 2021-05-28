@@ -258,6 +258,17 @@ func main() {
 			break
 		}
 	}
+
+	// Free
+	for i := 0; i < 20; i++ {
+		fmt.Println("Free loop count = ", i)
+	}
+
+	var hoge bool = true
+	if hoge {
+		fmt.Println("Free if true")
+	}
+
 }
 
 func funcChannelB(chA chan <- string) {
