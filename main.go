@@ -1,12 +1,9 @@
 package main
 
 import (
-	"time"
 	"fmt"
+	"time"
 )
-
-
-
 
 func main() {
 	fmt.Println("Hello, World")
@@ -34,16 +31,15 @@ func main() {
 	aa1[2] = "Blue"
 	fmt.Println(aa1[0], aa1[1], aa1[2])
 
-
 	// スライス == Javaでいうリスト？
 	aa2 := []string{}
 	aa2 = append(aa2, "Red")
 	aa2 = append(aa2, "Blue")
 	fmt.Println(aa2[0], aa2[1])
-	
+
 	// capは容量。メモリ上に確保されている数。
 	aa3 := []int{}
-	for i := 0; i< 10; i++ {
+	for i := 0; i < 10; i++ {
 		aa3 = append(aa3, i)
 		fmt.Println(len(aa3), cap(aa3))
 	}
@@ -67,8 +63,8 @@ func main() {
 
 	// mapをループ処理する
 	fmt.Println("### Map Loop ####")
-	for key,value := range map1 {
-		fmt.Println(key ," = ", value)
+	for key, value := range map1 {
+		fmt.Println(key, " = ", value)
 	}
 
 	var x int = 3
@@ -103,7 +99,7 @@ func main() {
 	}
 
 	// for
-	for i:= 0; i < 10; i++ {
+	for i := 0; i < 10; i++ {
 		fmt.Println(i)
 	}
 
@@ -114,7 +110,7 @@ func main() {
 		if n > 10 {
 			fmt.Println("Break!!")
 			break
-		} else if n % 2 == 1 {
+		} else if n%2 == 1 {
 			fmt.Println("Continue = ", n)
 			continue
 		} else {
@@ -132,7 +128,7 @@ func main() {
 	fmt.Println("goto1")
 	goto Done
 	fmt.Println("goto2")
-	Done:
+Done:
 	fmt.Println("Done")
 
 	// function
@@ -197,7 +193,7 @@ func main() {
 
 	bookList := []*Book{}
 
-	for i:= 0; i < 10; i++ {
+	for i := 0; i < 10; i++ {
 		book := new(Book)
 		book.title = fmt.Sprintf("Title#%d", i)
 		bookList = append(bookList, book)
@@ -224,7 +220,7 @@ func main() {
 	go funcChannel(chA)
 	// チャネルからのメッセージを受信
 	fmt.Println("Wait....!!")
-	msg := <- chA
+	msg := <-chA
 	fmt.Println(msg)
 
 	// selectを用いた待ち合わせ
@@ -243,12 +239,12 @@ func main() {
 	for {
 		fmt.Print(".")
 		select {
-		case msg := <- chAA:
+		case msg := <-chAA:
 			fmt.Println("")
 			fmt.Println("chAA found msg")
 			finflagA = true
 			fmt.Println(msg)
-		case msg := <- chBB:
+		case msg := <-chBB:
 			fmt.Println("")
 			fmt.Println("chBB found msg")
 			finflagB = true
@@ -271,20 +267,19 @@ func main() {
 
 }
 
-func funcChannelB(chA chan <- string) {
+func funcChannelB(chA chan<- string) {
 	fmt.Println("funcChannelB Start!!")
 	time.Sleep(10 * time.Second)
 	fmt.Println("funcChannelB Sleep End!!")
 	chA <- "funcChannelB Finished"
 }
 
-func funcChannel(chA chan <- string) {
+func funcChannel(chA chan<- string) {
 	fmt.Println("funcChannel Start!!")
 	time.Sleep(20 * time.Second)
 	fmt.Println("funcChaneel Sleep End!!!!")
 	chA <- "funcChannel Finished"
 }
-
 
 func funcGoroutine() {
 	fmt.Println("funcGoroutine start")
@@ -295,20 +290,16 @@ func funcGoroutine() {
 	}
 }
 
-
-
 func pointercheck(b1 int, b2 *int) {
 	b1 = 456
 	*b2 = 789
 }
 
-
-
-func funcA(a int, b ... int) {
+func funcA(a int, b ...int) {
 	fmt.Println("a = ", a)
 	for i, num := range b {
-		fmt.Println("b[",i,"] = ", num)
-	}	
+		fmt.Println("b[", i, "] = ", num)
+	}
 }
 
 func addMinus(x int, y int) (int, int) {
@@ -321,12 +312,12 @@ func add(x int, y int) int {
 
 type Person struct {
 	name string
-	age int
+	age  int
 }
 
 type Person2 struct {
 	name string
-	Age int
+	Age  int
 }
 
 func (p *Person2) SetPerson2(name string) {
@@ -339,7 +330,7 @@ func (p *Person) SetPerson(name string, age int) {
 }
 
 func (p *Person) GetPerson() (string, int) {
-	return p.name ,p.age
+	return p.name, p.age
 }
 
 type Printable interface {
@@ -374,5 +365,3 @@ func funcB(a interface{}) {
 		fmt.Println("Not Printable.")
 	}
 }
-
-
