@@ -2,10 +2,11 @@ package main
 
 
 import (
-	"fmt"
+	// 任意の名前を指定すれば、パッケージ名を変更できる
+	f "fmt"
 	"example.com/gosample"
 )
 
 func main() {
-	fmt.Println(gosample.Message)
+	f.Println(gosample.Message)
 }
