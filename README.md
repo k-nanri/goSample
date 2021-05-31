@@ -13,6 +13,8 @@
 
 ここから
 [https://gihyo.jp/dev/feature/01/go_4beginners/0001?page=3]
+ここまで実施(エラーを返す関数の途中)
+[https://gihyo.jp/dev/feature/01/go_4beginners/0002?page=3]
 
 Go Web プログラミング
 [https://astaxie.gitbooks.io/build-web-application-with-golang/content/ja/index.html]
