@@ -44,6 +44,11 @@ func main() {
 	}
 	f.Println("n = ", n)
 
+	// 無名関数
+	func(i, j int) {
+		f.Println(i + j)
+	}(2, 4)
+
 }
 
 func dev(i, j int) (result int, err error) {
