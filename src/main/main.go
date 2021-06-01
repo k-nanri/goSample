@@ -6,6 +6,7 @@ import (
 	f "fmt"
 	"example.com/gosample"
 	"os"
+	"errors"
 )
 
 func main() {
@@ -37,4 +38,19 @@ func main() {
 		f.Println(file)
 	}
 
+	n, err := dev(10, 0)
+	if err != nil {
+		f.Println(err)
+	}
+	f.Println("n = ", n)
+
+}
+
+func dev(i, j int) (result int, err error) {
+	if j == 0 {
+		err = errors.New("divied by zero")
+		return
+	}
+	result = i / j
+	return
 }
