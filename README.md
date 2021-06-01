@@ -11,9 +11,7 @@
 はじめてのGo
 [https://gihyo.jp/dev/feature/01/go_4beginners]
 
-ここから
-[https://gihyo.jp/dev/feature/01/go_4beginners/0001?page=3]
-ここまで実施
+ここまで実施(構造体のところから)
 [https://gihyo.jp/dev/feature/01/go_4beginners/0003]
 
 Go Web プログラミング
@@ -90,7 +88,9 @@ fallthroughがあると次のcase文が実行される。
 
 GoLangdでは、クラスの代わりに構造体を使用。
 クラスメソッドに相当する関数は関数名の前に(thisに相当する変数 *構造体名)をつけて定義する。
-大文字で始まるメンバ変数は外部からアクセス可能。小文字であれば、パッケージ外からのアクセスは不可。
+大文字で始まるメンバ変数は外部からアクセス可能。小文字であれば、パッケージ外からのアクセスは不可。  
+
+構造体の生成時に値を明示的に指定しなかった場合は、ゼロ値で初期化される。  
 
 ### ゴルーチン(Goroutine)
 
@@ -99,6 +99,28 @@ Go言語で並行処理を実現するためのもの。スレッドよりも高
 ### GOPATHとGOROOT
 
 これの影響で実行できない。
+go.modの影響だったようだ。
+
+### type
+
+下記のような関数があった場合に、idとpriorityを逆に指定してしまった場合でもコンパイルが通ってしまう。  
+このようなミスはテストで発見することができるが、意味に応じた型を持っていれば、コンパイルエラーとして問題を検出できる。  
+
+```go
+func ProcessTask(id int, priority int) {
+  // 処理
+}
+```
+
+Goでは、typeを使用すると型の名前、その型の定義が可能。  
+関数呼び出し時に、idとpriorityが逆になっていても、コンパイルエラーとして問題を検出することが可能。  
+
+```go
+type ID int
+type Priority int
+
+func ProcessTask(id ID, priority Priority)
+```
 
 
 

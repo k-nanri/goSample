@@ -9,6 +9,9 @@ import (
 	"errors"
 )
 
+type ID int
+type Priority int
+
 func main() {
 	f.Println(gosample.Message)
 
@@ -61,6 +64,14 @@ func main() {
 		f.Println("NG")
 	}
 
+	var id ID = 123
+	var priority Priority = 567
+	ProcessTask(id, priority)
+
+}
+
+func ProcessTask(id ID, priority Priority) {
+	f.Println("id = ", id, ", priority = ", priority)
 }
 
 func dev(i, j int) (result int, err error) {
