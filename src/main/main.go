@@ -49,6 +49,18 @@ func main() {
 		f.Println(i + j)
 	}(2, 4)
 
+	var month map[int]string = map[int]string{}
+	month[1] = "Jaunary"
+	month[2] = "February"
+	f.Println(month)
+
+	_, ok := month[3]
+	if ok {
+		f.Println("OK")
+	} else {
+		f.Println("NG")
+	}
+
 }
 
 func dev(i, j int) (result int, err error) {
