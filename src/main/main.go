@@ -68,6 +68,58 @@ func main() {
 	var priority Priority = 567
 	ProcessTask(id, priority)
 
+	var task Task = Task {
+		ID: 1,
+		Detail: "buy the milk",
+		done: true,
+	}
+
+	f.Println("ID = ", task.ID)
+	f.Println("Detail = ", task.Detail)
+	f.Println("done = ", task.done)
+
+	// 初期化してない場合はゼロで初期化される
+	task = Task{}
+	f.Println("ID = ", task.ID)
+	f.Println("Detail = ", task.Detail)
+	f.Println("done = ", task.done)
+
+
+	task2 := &Task{done: false}
+	Finish(task2)
+	f.Println(task2.done)
+
+	task3 := NewTask(3, "hoge")
+	f.Printf("%+v", task3)
+
+	task5 := NewTask(5, "hoge2")
+	task5.Finish2()
+	f.Printf("%+v", task5)
+
+}
+
+func (task *Task) Finish2() {
+	task.done = true
+}
+
+// コンストラクタはNewで始まる関数を定義
+func NewTask(id int, detail string) *Task {
+	task := &Task{
+		ID: id,
+		Detail: detail,
+		done: false,
+	}
+	return task
+}
+
+type Task struct {
+	ID int
+	Detail string
+	done bool
+}
+
+func Finish(task *Task) {
+	task.done = true
 }
 
 func ProcessTask(id ID, priority Priority) {
