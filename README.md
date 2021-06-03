@@ -11,7 +11,7 @@
 はじめてのGo
 [https://gihyo.jp/dev/feature/01/go_4beginners]
 
-ここまで実施(構造体のところから)
+ここまで実施(構造体の埋め込み)
 [https://gihyo.jp/dev/feature/01/go_4beginners/0003]
 
 Go Web プログラミング

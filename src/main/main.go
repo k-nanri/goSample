@@ -95,6 +95,9 @@ func main() {
 	task5 := NewTask(5, "hoge2")
 	task5.Finish2()
 	f.Printf("%+v", task5)
+	f.Println("")
+
+	gosample.Execute()
 
 }
 
