@@ -7,6 +7,7 @@ import (
 	"example.com/gosample"
 	"os"
 	"errors"
+	"example.com/httpsample"
 )
 
 type ID int
@@ -98,6 +99,8 @@ func main() {
 	f.Println("")
 
 	gosample.Execute()
+
+	httpsample.ExecuteHttp()
 
 }
 

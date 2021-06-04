@@ -11,8 +11,8 @@
 はじめてのGo
 [https://gihyo.jp/dev/feature/01/go_4beginners]
 
-ここまで実施(構造体の埋め込み)
-[https://gihyo.jp/dev/feature/01/go_4beginners/0003]
+ここから
+[https://gihyo.jp/dev/feature/01/go_4beginners/0004]
 
 Go Web プログラミング
 [https://astaxie.gitbooks.io/build-web-application-with-golang/content/ja/index.html]
