@@ -121,9 +121,13 @@ type Priority int
 
 func ProcessTask(id ID, priority Priority)
 ```
+## 型
 
-
-
+Goでは、暗黙的な型変換はしない。  
+あるインタフェース値が指定した型であるかを調べるには、Type Assertion(型の検査)を使用。  
+Type Assertionは単一の型に対する検査しかできない。  
+Type Switch(型での分岐)を使うと複数の型に対する検査を実行できる。  
+型によって分岐したい場合は、switchと組み合わせる。
 
 ##  不明点
 
