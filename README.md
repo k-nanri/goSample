@@ -133,6 +133,8 @@ Type Switch(型での分岐)を使うと複数の型に対する検査を実行�
 
 構造体からJSONに変換するときは、```go encoding/json ``` モジュールを使用する。  
 構造体からJSONへの変換： json.Marshal
+構造体のフィールドの型定義の後ろにタグをつけることで、出力対象を変更できる。
+JSONから構造体の変換：json.Unmarshal
 
 ##  不明点
 

@@ -7,11 +7,11 @@ import (
 )
 
 type Person struct {
-	ID int
-	Name string
-	Email string
-	Age int
-	Address string
+	ID int `json:"id"`
+	Name string `json:"name"`
+	Email string `json:"-"`
+	Age int `json:"age"`
+	Address string `json:"address,omitempty"`
 	memo string
 }
 
@@ -20,6 +20,7 @@ type Person struct {
 func ExecuteHttp() {
 	f.Println("=== ExecuteHttp ===================")
 
+	// JSONへの変換
 	person := &Person {
 		ID: 1,
 		Name: "Gopher",
@@ -34,5 +35,13 @@ func ExecuteHttp() {
 	}
 	f.Println(string(b))
 
+	// JSONからの変換
+	var person2 Person
+	c := []byte(`{"id": 1, "name": "Gooooo", "age":5}`)
+	err2 := json.Unmarshal(c, &person2)
+	if err2 != nil {
+		log.Fatal(err2)
+	}
+	f.Println("json to struct = ", person2)
 	
 }
