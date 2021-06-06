@@ -129,6 +129,11 @@ Type Assertionは単一の型に対する検査しかできない。
 Type Switch(型での分岐)を使うと複数の型に対する検査を実行できる。  
 型によって分岐したい場合は、switchと組み合わせる。
 
+## JSON
+
+構造体からJSONに変換するときは、```go encoding/json ``` モジュールを使用する。  
+構造体からJSONへの変換： json.Marshal
+
 ##  不明点
 
 - main.go  の ```package main``` を別名にすると実行ファイルが作成されない
