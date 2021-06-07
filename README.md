@@ -4,9 +4,10 @@
 
 - GoLangの基本構文を覚える
 - 基本的なコーディングができるようになる(for文とかif文をサイトを見ないで書けるようになる)
-- GoLangの単体テストのやり方
 - GoLangでRESTAPIのプログラムを作成できるようになる
 - GoLangからDBの操作する方法を学ぶ
+- GoLangの単体テストのやり方
+- GoLangでのログ出力方法
 
 はじめてのGo
 [https://gihyo.jp/dev/feature/01/go_4beginners]
