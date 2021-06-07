@@ -4,6 +4,8 @@ import (
 	f "fmt"
 	"encoding/json"
 	"log"
+	"os"
+
 )
 
 type Person struct {
@@ -43,5 +45,19 @@ func ExecuteHttp() {
 		log.Fatal(err2)
 	}
 	f.Println("json to struct = ", person2)
-	
+
+	// ファイルへの書き込み
+	file, err := os.Create("./file.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	message := []byte("hello world\n")
+
+	// Write()で書き込み
+	_, err = file.Write(message)
+	if err != nil {
+		log.Fatal(err)
+	}	
 }

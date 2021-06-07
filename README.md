@@ -11,7 +11,7 @@
 はじめてのGo
 [https://gihyo.jp/dev/feature/01/go_4beginners]
 
-ここから(構造体からJSONへの変換)
+ここから(ファイルの読み込み)
 [https://gihyo.jp/dev/feature/01/go_4beginners/0004]
 
 Go Web プログラミング
