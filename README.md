@@ -8,6 +8,7 @@
 - GoLangからDBの操作する方法を学ぶ
 - GoLangの単体テストのやり方
 - GoLangでのログ出力方法
+- GoLangのソースコードの構成
 
 はじめてのGo
 [https://gihyo.jp/dev/feature/01/go_4beginners]
