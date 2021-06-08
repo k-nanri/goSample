@@ -1,11 +1,10 @@
 package httpsample
 
 import (
-	f "fmt"
 	"encoding/json"
+	f "fmt"
 	"log"
 	"os"
-
 )
 
 type Person struct {
@@ -59,5 +58,23 @@ func ExecuteHttp() {
 	_, err = file.Write(message)
 	if err != nil {
 		log.Fatal(err)
-	}	
+	}
+
+	file2, err2 := os.Open("./file2.txt")
+	if err2 != nil {
+		f.Println("Open Error")
+		log.Fatal(err2)
+	}
+
+	defer file2.Close()
+
+	message2 := make([]byte, 20)
+
+	_, err2 = file2.Read(message2)
+	if err2 != nil {
+		
+		log.Fatal(err2)
+	}
+
+	f.Println("file2.txt = " , string(message2))
 }
