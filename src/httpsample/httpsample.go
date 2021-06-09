@@ -17,6 +17,10 @@ type Person struct {
 	memo string
 }
 
+type Person2 struct {
+	ID int `json:"id"`
+	Name string `json:"name"`
+}
 
 
 func ExecuteHttp() {
@@ -80,6 +84,7 @@ func ExecuteHttp() {
 	f.Println("file2.txt = " , string(message2))
 
 	http.HandleFunc("/", IndexHandler)
+	http.HandleFunc("/persons", PersonHandler)
 	http.ListenAndServe(":3000", nil)
 }
 
@@ -87,5 +92,36 @@ func IndexHandler(w http.ResponseWriter, r *http.Request) {
 
 	f.Fprint(w, "hello world")
 
+}
 
+func PersonHandler(w http.ResponseWriter, r *http.Request) {
+
+	defer r.Body.Close()
+
+	// メソッドがPOST
+	if r.Method == "POST" {
+
+		var person Person2
+		decoder := json.NewDecoder(r.Body)
+		err := decoder.Decode((&person))
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		// ファイル名を{id}.txtとする
+		filename := f.Sprintf("%d.txt", person.ID)
+		file, err := os.Create(filename)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		defer file.Close()
+
+		_, err = file.WriteString(person.Name)
+		if err != nil {
+			log.Fatal(err)
+		}
+		// レスポンスとしてステータスコード201を送信
+		w.WriteHeader(http.StatusCreated)
+	}
 }
