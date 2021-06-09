@@ -13,8 +13,8 @@
 はじめてのGo
 [https://gihyo.jp/dev/feature/01/go_4beginners]
 
-ここから(ファイルの読み込み)
-[https://gihyo.jp/dev/feature/01/go_4beginners/0004]
+ここから(JSON/HTMLサーバ)
+[https://gihyo.jp/dev/feature/01/go_4beginners/0004?page=3]
 
 Go Web プログラミング
 [https://astaxie.gitbooks.io/build-web-application-with-golang/content/ja/index.html]

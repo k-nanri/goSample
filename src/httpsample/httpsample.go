@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	f "fmt"
 	"log"
+	"net/http"
 	"os"
 )
 
@@ -77,4 +78,14 @@ func ExecuteHttp() {
 	}
 
 	f.Println("file2.txt = " , string(message2))
+
+	http.HandleFunc("/", IndexHandler)
+	http.ListenAndServe(":3000", nil)
+}
+
+func IndexHandler(w http.ResponseWriter, r *http.Request) {
+
+	f.Fprint(w, "hello world")
+
+
 }
