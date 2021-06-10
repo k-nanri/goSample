@@ -3,10 +3,15 @@ package httpsample
 import (
 	"encoding/json"
 	f "fmt"
+	"html/template"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
+	"strconv"
 )
+
+var t = template.Must(template.ParseFiles("index.html"))
 
 type Person struct {
 	ID int `json:"id"`
@@ -123,5 +128,27 @@ func PersonHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		// レスポンスとしてステータスコード201を送信
 		w.WriteHeader(http.StatusCreated)
+	} else if r.Method == "GET" {
+		// パラメータ取得
+		id, err := strconv.Atoi((r.URL.Query().Get("id")))
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		filename := f.Sprintf("%d.txt", id)
+		b, err := ioutil.ReadFile(filename)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		// person生成
+		person := Person{
+			ID: id,
+			Name: string(b),
+		}
+
+		// レスポンスにエンコーディグしたHTMLを書き込む
+		t.Execute(w, person)
+
 	}
 }

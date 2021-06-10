@@ -13,7 +13,7 @@
 はじめてのGo
 [https://gihyo.jp/dev/feature/01/go_4beginners]
 
-ここから(JSON/HTMLサーバ GET)
+ここから(io/ioutilパッケージ)
 [https://gihyo.jp/dev/feature/01/go_4beginners/0004?page=3]
 
 Go Web プログラミング
