@@ -88,6 +88,20 @@ func ExecuteHttp() {
 
 	f.Println("file2.txt = " , string(message2))
 
+	// ファイル書き込み
+	hello := []byte("hello world\n")
+	err4 := ioutil.WriteFile("./file3.txt", hello, 0666)
+	if err != nil {
+		log.Fatal(err4)
+	}
+
+	// ファイルの中身を全て読み込み
+	message3, err5 := ioutil.ReadFile("./file3.txt")
+	if err5 != nil {
+		log.Fatal(err5)
+	}
+	f.Print("file3.txt = ", string(message3))
+
 	http.HandleFunc("/", IndexHandler)
 	http.HandleFunc("/persons", PersonHandler)
 	http.ListenAndServe(":3000", nil)

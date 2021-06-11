@@ -13,8 +13,8 @@
 はじめてのGo
 [https://gihyo.jp/dev/feature/01/go_4beginners]
 
-ここから(io/ioutilパッケージ)
-[https://gihyo.jp/dev/feature/01/go_4beginners/0004?page=3]
+ここから(
+[https://gihyo.jp/dev/feature/01/go_4beginners/0005]
 
 Go Web プログラミング
 [https://astaxie.gitbooks.io/build-web-application-with-golang/content/ja/index.html]
