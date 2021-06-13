@@ -13,7 +13,7 @@
 はじめてのGo
 [https://gihyo.jp/dev/feature/01/go_4beginners]
 
-ここから(sync.WaitGroup)
+ここから(チャネル)
 [https://gihyo.jp/dev/feature/01/go_4beginners/0005?page=2]
 
 Go Web プログラミング
@@ -137,6 +137,12 @@ Type Switch(型での分岐)を使うと複数の型に対する検査を実行�
 構造体からJSONへの変換： json.Marshal
 構造体のフィールドの型定義の後ろにタグをつけることで、出力対象を変更できる。
 JSONから構造体の変換：json.Unmarshal
+
+## sync.WaitGroup
+
+カウントがゼロになるまでWait()で待つ。
+カウントの追加はAdd()、カウントを減らすにはDone()を使用する。
+JavaでいうCountDownLatchと同じような役割。
 
 ##  不明点
 
