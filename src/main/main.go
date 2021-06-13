@@ -8,6 +8,7 @@ import (
 
 	"example.com/gosample"
 	"example.com/httpsample"
+	"example.com/threadsample"
 )
 
 type ID int
@@ -99,7 +100,7 @@ func main() {
 	f.Println("")
 
 	gosample.Execute()
-
+	threadsample.Execute()
 	httpsample.ExecuteHttp()
 
 }
