@@ -3,18 +3,31 @@
 ## 目標
 
 - GoLangの基本構文を覚える
+　　完了
 - 基本的なコーディングができるようになる(for文とかif文をサイトを見ないで書けるようになる)
+　　完了
 - GoLangでRESTAPIのプログラムを作成できるようになる
+　　実施中
 - GoLangからDBの操作する方法を学ぶ
+  [https://selfnote.work/20201222/programming/playing-with-golang-postgresql1/]
+
 - GoLangの単体テストのやり方
+  [https://www.tweeeety.blog/entry/2018/01/22/233520]
+
 - GoLangでのログ出力方法
+  標準パッケージのlog
+  go-logging [https://qiita.com/RW_876/items/ca348dc96e6656b2052f]
+  
 - GoLangのソースコードの構成
 
 はじめてのGo
 [https://gihyo.jp/dev/feature/01/go_4beginners]
 
-ここから(チャネル)
+ここから(チャネル)　飽きたので中止。
 [https://gihyo.jp/dev/feature/01/go_4beginners/0005?page=2]
+
+REST API作成
+[https://rightcode.co.jp/blog/information-technology/golang-introduction-rest-api]
 
 Go Web プログラミング
 [https://astaxie.gitbooks.io/build-web-application-with-golang/content/ja/index.html]
@@ -24,6 +37,9 @@ Go Web プログラミング
 
 次に参考にする
 [https://qiita.com/tenntenn/items/0e33a4959250d1a55045]
+
+Webフレームワークランキング
+[https://qiita.com/loftkun/items/1a9951d1864bebdc51e1]
 
 ## メモ
 
