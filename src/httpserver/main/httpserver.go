@@ -1,33 +1,18 @@
 package main
 
 import (
-	"fmt"
-	"log"
 	"net/http"
-	"strings"
+
+	"github.com/labstack/echo"
 )
 
-func sayhelloName(w http.ResponseWriter, r *http.Request) {
-
-	// オプションを解析
-	r.ParseForm()
-
-	fmt.Println("form: ",r.Form)
-	fmt.Println("path: ", r.URL.Path)
-	fmt.Println("scheme: ", r.URL.Scheme)
-	fmt.Println("Form[url_long] :", r.Form["url_long"])
-	for k, v := range r.Form {
-		fmt.Println("key : ", k)
-		fmt.Println("val : ", strings.Join(v, ""))
-	}
-	fmt.Fprintf(w, "Heelo client!!")
-}
-
 func main() {
+
+	e := echo.New()
+	e.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Hello World!")
+	})
+
+	e.Logger.Fatal(e.Start(":1323"))
 	
-	http.HandleFunc("/", sayhelloName)
-	err := http.ListenAndServe(":9090", nil)
-	if err != nil {
-		log.Fatal("ListenAndServer: ", err)
-	}
 }
