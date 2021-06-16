@@ -7,7 +7,8 @@
 - 基本的なコーディングができるようになる(for文とかif文をサイトを見ないで書けるようになる)
 　　完了
 - GoLangでRESTAPIのプログラムを作成できるようになる
-　　実施中
+  echo を試してみている。
+
 - GoLangからDBの操作する方法を学ぶ
   [https://selfnote.work/20201222/programming/playing-with-golang-postgresql1/]
 
