@@ -15,9 +15,19 @@ func main() {
 
 	e.GET("/users/:name", getUserName)
 	e.GET("/show", show)
+	e.POST("/save", save)
 
 	e.Logger.Fatal(e.Start(":1323"))
 	
+}
+
+func save(c echo.Context) error {
+
+	name := c.FormValue("name")
+	email := c.FormValue("email")
+
+	return c.String(http.StatusOK, "name: "+name+", email:"+email)
+
 }
 
 func show(c echo.Context) error {
