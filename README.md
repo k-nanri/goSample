@@ -27,7 +27,7 @@
 ここから(チャネル)　飽きたので中止。
 [https://gihyo.jp/dev/feature/01/go_4beginners/0005?page=2]
 
-REST API作成(JSON形式で返す)
+REST API作成(JSON形式で返却まで)
 [https://rightcode.co.jp/blog/information-technology/golang-introduction-rest-api]
 
 Go Web プログラミング

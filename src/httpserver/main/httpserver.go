@@ -6,6 +6,24 @@ import (
 	"github.com/labstack/echo"
 )
 
+type User struct {
+	Name string `json: "name"`
+	Email string `json: "email"`
+}
+
+type Message struct {
+	Name string `json:"name"`
+	Email string `json:"email"`
+	Message string `json: "message"`
+}
+
+type Response struct {
+	Name string `json: "name"`
+	Email string `json: "email"`
+	Message string `json:"message"`
+	Stusts string `json: "status"`
+}
+
 func main() {
 
 	e := echo.New()
@@ -16,9 +34,35 @@ func main() {
 	e.GET("/users/:name", getUserName)
 	e.GET("/show", show)
 	e.POST("/save", save)
+	e.POST("/saveuser", saveUser)
+	e.POST("/send", sendMessage)
 
 	e.Logger.Fatal(e.Start(":1323"))
 	
+}
+
+func sendMessage(c echo.Context) error {
+
+	m := new(Message)
+	if error := c.Bind(m); error != nil {
+		return error
+	}
+
+	r := new(Response)
+	r.Name = m.Name
+	r.Email = m.Email
+	r.Message = m.Message
+	r.Stusts = "success"
+
+	return c.JSON(http.StatusOK, r)
+}
+
+func saveUser(c echo.Context) error {
+	u := new(User)
+	if err := c.Bind(u); err != nil {
+		return err
+	}
+	return c.JSON(http.StatusOK, u)
 }
 
 func save(c echo.Context) error {
