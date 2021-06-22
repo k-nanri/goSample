@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/labstack/echo"
@@ -24,6 +25,15 @@ type Response struct {
 	Stusts string `json: "status"`
 }
 
+type Book struct {
+	Name string `json:"name"`
+	Title string `json:title`
+}
+
+type BookResponse struct {
+	Status string `json:"status"`
+}
+
 func main() {
 
 	e := echo.New()
@@ -36,9 +46,25 @@ func main() {
 	e.POST("/save", save)
 	e.POST("/saveuser", saveUser)
 	e.POST("/send", sendMessage)
+	e.POST("/book", book)
 
 	e.Logger.Fatal(e.Start(":1323"))
 	
+}
+
+func book(c echo.Context) error {
+
+	b := new(Book)
+	if error := c.Bind(b); error != nil {
+		return error
+	}
+	fmt.Println("name = ", b.Name)
+	fmt.Println("Title = ", b.Title)
+
+	r := new(BookResponse)
+	r.Status = "success"
+	return c.JSON(http.StatusOK, r)
+
 }
 
 func sendMessage(c echo.Context) error {
