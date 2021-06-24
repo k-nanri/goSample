@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 
 	"github.com/labstack/echo"
@@ -32,6 +33,8 @@ type Book struct {
 
 type BookResponse struct {
 	Status string `json:"status"`
+	Name string `json:"name"`
+	Email string `json:"email"`
 }
 
 func main() {
@@ -58,11 +61,13 @@ func book(c echo.Context) error {
 	if error := c.Bind(b); error != nil {
 		return error
 	}
-	fmt.Println("name = ", b.Name)
+	log.Fatal("name = ", b.Name)
 	fmt.Println("Title = ", b.Title)
 
 	r := new(BookResponse)
 	r.Status = "success"
+	r.Name = b.Name
+	r.Email = b.Title
 	return c.JSON(http.StatusOK, r)
 
 }
@@ -78,6 +83,7 @@ func sendMessage(c echo.Context) error {
 	r.Name = m.Name
 	r.Email = m.Email
 	r.Message = m.Message
+	fmt.Println(m)
 	r.Stusts = "success"
 
 	return c.JSON(http.StatusOK, r)
