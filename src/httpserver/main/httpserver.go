@@ -16,7 +16,7 @@ type User struct {
 type Message struct {
 	Name string `json:"name"`
 	Email string `json:"email"`
-	Message string `json: "message"`
+	Message string `json:"message"`
 }
 
 type Response struct {
@@ -50,9 +50,18 @@ func main() {
 	e.POST("/saveuser", saveUser)
 	e.POST("/send", sendMessage)
 	e.POST("/book", book)
+	e.GET("/book", getBook)
 
 	e.Logger.Fatal(e.Start(":1323"))
 	
+}
+
+func getBook(c echo.Context) error {
+	u := new(Message)
+	u.Email = "hhhh"
+	u.Name = "hhhhaaaaa"
+	u.Message = "aaaaa"
+	return c.JSON(http.StatusOK, u)
 }
 
 func book(c echo.Context) error {
